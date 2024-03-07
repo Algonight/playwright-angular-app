@@ -1,0 +1,46 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+
+  .login-section {
+    display: flex;
+    align-items: center;
+
+    .login-button {
+      margin-right: 10px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
+
+  .todo-section {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.5fr repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .todo-title {
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  .todo-add {
+    grid-area: 2 / 1 / 5 / 3;
+  }
+
+  .todo-list {
+    grid-area: 2 / 3 / 6 / 6;
+  }
+}
