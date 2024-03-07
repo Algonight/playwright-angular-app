@@ -1,1 +1,29 @@
-<p>login-page works!</p>
+<div class="container">
+  <h1>Please Login</h1>
+
+  @if (errorMessage) {
+  <p class="error-message">{{ errorMessage }}</p>
+  }
+
+  <div class="form-fields" [formGroup]="loginForm">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+    </mat-form-field>
+    <mat-form-field color="accent">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+  </div>
+
+  <div class="action-buttons">
+    <button mat-raised-button color="accent" (click)="resetForm()">
+      Reset
+    </button>
+    <button mat-raised-button color="primary" (click)="onLogin()">
+      @if (isLoading) {
+      <mat-spinner [diameter]="20" color="accent" />
+      } @else { Login }
+    </button>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(246, 246, 246);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 64px;
+  border: 1px solid slategray;
+  border-radius: 15px;
+  background-color: white;
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .action-buttons {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+
+    button {
+      width: 90px;
+    }
+  }
+}
