@@ -5,7 +5,7 @@
   <p class="error-message">{{ errorMessage }}</p>
   }
 
-  <div class="form-fields" [formGroup]="loginForm">
+  <form class="form-fields" [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <mat-form-field>
       <mat-label>Username</mat-label>
       <input matInput formControlName="username" />
@@ -14,16 +14,21 @@
       <mat-label>Password</mat-label>
       <input matInput type="password" formControlName="password" />
     </mat-form-field>
-  </div>
 
-  <div class="action-buttons">
-    <button mat-raised-button color="accent" (click)="resetForm()">
-      Reset
-    </button>
-    <button mat-raised-button color="primary" (click)="onLogin()">
-      @if (isLoading) {
-      <mat-spinner [diameter]="20" color="accent" />
-      } @else { Login }
-    </button>
-  </div>
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="resetForm()"
+      >
+        Reset
+      </button>
+      <button mat-raised-button color="primary" type="submit">
+        @if (isLoading) {
+        <mat-spinner [diameter]="20" color="accent" />
+        } @else { Login }
+      </button>
+    </div>
+  </form>
 </div>

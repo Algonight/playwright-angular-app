@@ -52,6 +52,8 @@ export class LoginPageComponent implements OnInit {
 
   onLogin() {
     this.isLoading = true;
+    console.log(this.loginForm.value);
+
     this.authService
       .login(this.loginForm.value.username, this.loginForm.value.password)
       .subscribe((isLoggedIn: boolean) => {

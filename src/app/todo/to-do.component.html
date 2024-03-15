@@ -1,0 +1,9 @@
+<form [formGroup]="toDoForm" (ngSubmit)="onAddToDo()">
+  <mat-form-field>
+    <input matInput [formControl]="title" placeholder="Title" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="description" placeholder="Description" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Add</button>
+</form>
